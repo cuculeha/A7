@@ -44,7 +44,6 @@ int main (){
 	cout << "Enter any key to continue. And Q to quit\n";
 	cin.ignore();
 	choice = cin.get();	
-	
 	}
 	
 	while (toupper(choice) != 'Q' );
