@@ -9,10 +9,10 @@ int main (){
 	string replacement;
 	string modifiedHaystack;
 	
-	cout << "Source string ?"'
+	cout << "Source string ?";
 	cin >> haystack;
 
-	cout << "find ?"
+	cout << "find ?";
 	cin >> needle;
 
 	cout << "Replacement string?";
@@ -30,7 +30,7 @@ return 0;
 string modifyString (const string haystack, const string needle, const string replacement )
 {
 	string newHaystack;
-	size_t = needleLength;
+	size_t needleLength;
 	size_t needlePosition;
 
 	// Make a copy
