@@ -11,13 +11,13 @@ int main (){
 	string replacement;
 	string modifiedHaystack;
 	
-	cout << "Source string ?";
+	cout << "Source string ? ";
 	cin >> haystack;
 
-	cout << "find ?";
+	cout << "find ? ";
 	cin >> needle;
 
-	cout << "Replacement string?";
+	cout << "Replacement string? ";
 	cin >> replacement;
 
 	modifiedHaystack = modifyString (haystack, needle, replacement);
