@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 string modifyString (const string haystack, const string needle, const string replacement );
@@ -20,7 +22,7 @@ int main (){
 
 	modifiedHaystack = modifyString (haystack, needle, replacement);
 
-	cout << "Source string = " << haystack << endl;
+	cout << "\n\nSource string = " << haystack << endl;
 	cout << "find = " << needle << endl;
 	cout << "result = " << modifiedHaystack << endl;
 	
@@ -36,7 +38,7 @@ string modifyString (const string haystack, const string needle, const string re
 	// Make a copy
 	newHaystack = haystack;
 	
-	needlePosition = haystack.find (needle);
+	needlePosition = transform(haystack.begin(), haystack.end(), haystack.begin(), ::toupper).find (transform(needle.begin(), needle.end(), needle.begin(), ::toupper));
 	needleLength = needle.length ();
 
 	// replace needle with replacemnent string for new haystack
