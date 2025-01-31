@@ -31,14 +31,22 @@ return 0;
 
 string modifyString (const string haystack, const string needle, const string replacement )
 {
-	string newHaystack;
-	size_t needleLength;
-	size_t needlePosition;
+	string newHaystack;                  // New modified haystack
+	string upper_haystack;               // Haystack with uppercase letters
+	string upper_needle;                 // Needle with uppercase letters
+	size_t needleLength;                 // To find needle length
+	size_t needlePosition;               // To find needle position
 
 	// Make a copy
 	newHaystack = haystack;
+	upper_haystack = haystack;
+	upper_needle = needle;
 	
-	needlePosition = transform(haystack.begin(), haystack.end(), haystack.begin(), ::toupper).find (transform(needle.begin(), needle.end(), needle.begin(), ::toupper));
+	// make haystack and needle uppercase
+	transform(upper_haystack.begin(), upper_haystack.end(), upper_haystack.begin(), ::toupper);
+    	transform(upper_needle.begin(), upper_needle.end(), upper_needle.begin(), ::toupper);
+
+	needlePosition = upper_haystack.find (upper_needle);
 	needleLength = needle.length ();
 
 	// replace needle with replacemnent string for new haystack
