@@ -1,38 +1,68 @@
 #include <string>
 #include <iostream>
 
+int findNeedle (string haystack, string needle );
+void ReplaceString (string &haystack, string needle, string replacement );
 using namespace std;
 
 int main (){
-	string toSearch;
+	string haystack;
+	string needle;
+	int needleFound;
 	string toReplace;
-	string strSentence = "My name is Saliha Babar"; 
-	size_t position;
-	size_t length;
+
 	char choice;
-	
-	do {
-	
-	cout << "Here is the string\n";
-	cout << strSentence << '\n';
-	cout << "Enter word to replace\n";
-	cin >> toSearch;
-	
-	// find the word.
-	position = strSentence.find (toSearch);
-	
-	while (position == string::npos )
+
+	cout << "Source string? ";
+	cin >> haystack
+
+	cout << "\find?";
+	cin >> needle;
+
+	// Check if the needle found in haystack
+	needleFound = findNeedle (string haystack, string needle)
+		
+	while ( needleFound == -1 );
 	{
-		cout << "Invalid string to replace...Enter your string again\n";
-		cin >> toSearch;
-		position = strSentence.find (toSearch);
+		cout << "Invalid string to replace. Enter another string to find\n";
+		cin >> needle;
+		
+		needleFound = findNeedle (string haystack, string needle)
 	}
 	
-	cout << "What would you like to replace '" << toSearch << "' with \n";
+	cout << "replacement string";
 	cin >> toReplace;
+
+	ReplaceString ( &haystack, needle, replacement );
+	}
+	
+return 0;
+}
+
+
+int findNeedle (string haystack, string needle )
+{
+	size_t position;
+	
+	// Check if the needle found in haystack
+	position = strSentence.find (toSearch);
+
+
+	if (position == string::npos)
+	{
+		return -1;
+	}
+	
+	return position;
+}
+
+
+void ReplaceString (string &haystack, string needle, string replacement )
+{
+	size_t length;
 	
 	// check for how many words to replace
-	length = toSearch.length();
+	length = needle.length();
 	
 	//replace the string
 	strSentence.replace (position, length, toReplace);
@@ -44,10 +74,4 @@ int main (){
 	cout << "Enter any key to continue. And Q to quit\n";
 	cin.ignore();
 	choice = cin.get();	
-	}
-	
-	while (toupper(choice) != 'Q' );
-	cout << "Program quitted\n";
-	
-return 0;
 }
