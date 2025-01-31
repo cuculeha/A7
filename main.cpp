@@ -50,8 +50,15 @@ string modifyString (const string haystack, const string needle, const string re
 	needleLength = needle.length ();
 
 	// replace needle with replacemnent string for new haystack
-	newHaystack.replace (needlePosition, needleLength, replacement);
+	if (needlePosition != string::npos )
+	{
+		newHaystack.replace (needlePosition, needleLength, replacement);
+	}
 
+	else
+	{
+		cout << "Needle is not found in haystack\n";
+	}
 	return newHaystack;
 	
 }
