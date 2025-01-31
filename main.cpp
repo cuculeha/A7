@@ -40,7 +40,7 @@ string modifyString (const string haystack, const string needle, const string re
 	needleLength = needle.length ();
 
 	// replace needle with replacemnent string for new haystack
-	newHaystack.replace (needleLength, needlePosition, replacement);
+	newHaystack.replace (needlePosition, needleLength, replacement);
 
 	return newHaystack;
 	
