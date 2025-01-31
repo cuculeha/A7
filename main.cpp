@@ -1,77 +1,47 @@
-#include <string>
 #include <iostream>
 
-int findNeedle (string haystack, string needle );
-void ReplaceString (string &haystack, string needle, string replacement );
 using namespace std;
+string modifyString (const string haystack, const string needle, const string replacement );
 
 int main (){
 	string haystack;
 	string needle;
-	int needleFound;
-	string toReplace;
+	string replacement;
+	string modifiedHaystack;
+	
+	cout << "Source string ?"'
+	cin >> haystack;
 
-	char choice;
-
-	cout << "Source string? ";
-	cin >> haystack
-
-	cout << "\find?";
+	cout << "find ?"
 	cin >> needle;
 
-	// Check if the needle found in haystack
-	needleFound = findNeedle (string haystack, string needle)
-		
-	while ( needleFound == -1 );
-	{
-		cout << "Invalid string to replace. Enter another string to find\n";
-		cin >> needle;
-		
-		needleFound = findNeedle (string haystack, string needle)
-	}
-	
-	cout << "replacement string";
-	cin >> toReplace;
+	cout << "Replacement string?";
+	cin >> replacement;
 
-	ReplaceString ( &haystack, needle, replacement );
-	}
+	modifiedHaystack = modifyString (haystack, needle, replacement);
+
+	cout << "Source string = " << haystack << endl;
+	cout << "find = " << needle << endl;
+	cout << "result = " << modifiedHaystack << endl;
 	
 return 0;
 }
 
-
-int findNeedle (string haystack, string needle )
+string modifyString (const string haystack, const string needle, const string replacement )
 {
-	size_t position;
-	
-	// Check if the needle found in haystack
-	position = strSentence.find (toSearch);
+	string newHaystack;
+	size_t = needleLength;
+	size_t needlePosition;
 
-
-	if (position == string::npos)
-	{
-		return -1;
-	}
+	// Make a copy
+	newHaystack = haystack;
 	
-	return position;
-}
+	needlePosition = haystack.find (needle);
+	needleLength = needle.length ();
 
+	// replace needle with replacemnent string for new haystack
+	newHaystack.replace (needleLength, needlePosition, replacement);
 
-void ReplaceString (string &haystack, string needle, string replacement )
-{
-	size_t length;
+	return newHaystack;
 	
-	// check for how many words to replace
-	length = needle.length();
-	
-	//replace the string
-	strSentence.replace (position, length, toReplace);
-
-	cout << "The new string now is :\n";
-	cout << strSentence ;
-	
-	cout << "\nDo you want to modify the string again?\n";
-	cout << "Enter any key to continue. And Q to quit\n";
-	cin.ignore();
-	choice = cin.get();	
 }
