@@ -42,7 +42,7 @@ string modifyString (const string haystack, const string needle, const string re
 	upper_haystack = haystack;
 	upper_needle = needle;
 	
-	// make haystack and needle uppercase
+	// make haystack and needle uppercase letters
 	transform(upper_haystack.begin(), upper_haystack.end(), upper_haystack.begin(), ::toupper);
     	transform(upper_needle.begin(), upper_needle.end(), upper_needle.begin(), ::toupper);
 
